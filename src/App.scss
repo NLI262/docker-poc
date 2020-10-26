@@ -1,0 +1,87 @@
+@import "./breakpoints.scss";
+
+.App {
+  height: 70vh;
+  position: relative;
+  background: peru;
+  display: flex;
+  // align-items: center;
+  // justify-content: center;
+
+  @include media("<=xs") {
+    background-color: purple;
+    .responsive-header {
+      color: white;
+      font-size: 10px;
+    }
+    .scss-container {
+      color: peru;
+      font-size: 10px;
+    }
+    .table-element {
+      border-collapse: collapse;
+      position: absolute;
+      top: 8vh;
+    }
+    .table-element th,
+    td {
+      border: 1px solid black;
+
+      padding: 8px;
+    }
+  }
+  @include media(">xs", "<=425px") {
+    background-color: greenyellow;
+    .responsive-header {
+      color: orangered;
+      font-size: 15px;
+    }
+    .scss-container {
+      color: black;
+      font-size: 15px;
+    }
+    .table-element {
+      border-collapse: collapse;
+      position: absolute;
+      top: 15vh;
+    }
+    .table-element th,
+    td {
+      border: 1px solid black;
+
+      padding: 8px;
+    }
+  }
+  @include media(">=tablet", "<desktop") {
+    background-color: burlywood;
+    .responsive-header {
+      color: yellowgreen;
+      font-size: 40px;
+    }
+    .scss-container {
+      color: white;
+      font-size: 40px;
+    }
+  }
+}
+.responsive-header {
+  color: darkslategray;
+  font-size: 24px;
+}
+.scss-container {
+  color: white;
+  font-size: 24px;
+}
+.table-element {
+  border-collapse: collapse;
+  position: absolute;
+  width:10vw;
+  
+  top: 25vh;
+  left:25vw;
+}
+.table-element th,td {
+  border: 1px solid black;
+
+  padding: 10px;
+}
