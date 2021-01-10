@@ -13,7 +13,7 @@ pipeline {
                 sh 'npm test'
             }
         }
-        stage('Sonarqube Analysis') {
+        stage('Sonarqube') {
     environment {
         scannerHome = tool 'sonar_scanner'
     }
@@ -25,7 +25,7 @@ pipeline {
         timeout(time: 10, unit: 'MINUTES') {
             waitForQualityGate abortPipeline: true
         }
-    }git
+    }
 }
     }
 }
