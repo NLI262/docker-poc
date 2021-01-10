@@ -10,7 +10,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing...'
-                sh 'npm test'
+                sh 'CI=true npm test'
             }
         }
         stage('Sonarqube') {
