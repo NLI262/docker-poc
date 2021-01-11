@@ -19,7 +19,7 @@ function App() {
         </tr>
         <tr>
           <td>February</td>
-          <td>$500</td>
+          <td>$501</td>
         </tr>
       </table>
       </div>
