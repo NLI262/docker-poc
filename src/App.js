@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <h1 className="responsive-header">Responsive With</h1>
-      <h1 className="scss-container">SCSS  hey</h1>
+      <h1 className="scss-container">SCSS </h1>
       
       <table className="table-element" >
         <tr>
@@ -19,7 +19,7 @@ function App() {
         </tr>
         <tr>
           <td>February</td>
-          <td>$50</td>
+          <td>$500</td>
         </tr>
       </table>
       </div>
