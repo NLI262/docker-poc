@@ -12,7 +12,7 @@ exports[`MyComponent should render correctly in "debug" mode 1`] = `
   <h1
     className="scss-container"
   >
-    SCSS  hey
+    SCSS 
   </h1>
   <table
     className="table-element"
@@ -38,7 +38,7 @@ exports[`MyComponent should render correctly in "debug" mode 1`] = `
         February
       </td>
       <td>
-        $50
+        $500
       </td>
     </tr>
   </table>
