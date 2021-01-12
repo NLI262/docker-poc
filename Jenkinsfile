@@ -1,15 +1,15 @@
 pipeline {
     agent any
        stages {
-        stage('Installation') {
+        stage('INSTALLATION') {
             steps {
-                echo 'Installation...'
+                echo 'INSTALLATION OF PACKAGES'
                 sh 'npm install'
             }
         }
-        stage('Test') {
+        stage('TESTING') {
             steps {
-                echo 'Testing...'
+                echo 'TESTING STAGE'
                 sh 'CI=true npm test'
             }
         }
@@ -18,7 +18,7 @@ pipeline {
         scannerHome = tool 'sonar_scanner'
     }
     steps {
-        echo 'Scanning....'
+        echo 'SONAR-QUBE SCANNING AND ANALYSIS'
         withSonarQubeEnv('Sonarqube') {
             sh "${scannerHome}/bin/sonar-scanner"
         }
@@ -28,21 +28,18 @@ pipeline {
     }
 }
 
-  stage('Build') {
+  stage('PRODUCTION-BUILD') {
             steps {
-                echo 'Production build...'
+                echo 'WORKING ON PRODUCTION BUILD'
                 sh 'npm run build'
             }
         }
-    stage('Upload') {
+    stage('DEPLOYMENT') {
         steps{
-        echo 'Uploading...'
+        echo 'UPLOADING TO AWS S3 BUCKET'
         dir('/var/lib/jenkins/workspace/responsivescreen/'){
-            pwd(); //Log current directory
-            withAWS(region:'ap-south-1',credentials:'s3cred') {
-                //  def identity=awsIdentity();//Log AWS credentials
-                // Upload files from working directory 'dist' in your project workspace
-                s3Upload(bucket:"mydeployment-assignment", workingDir:'build', includePathPattern:'**/*');
+           withAWS(region:'ap-south-1',credentials:'s3cred') {
+              s3Upload(bucket:"mydeployment-assignment", workingDir:'build', includePathPattern:'**/*');
             }
         }
     }
