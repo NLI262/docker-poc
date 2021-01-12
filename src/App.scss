@@ -30,6 +30,7 @@
       padding: 8px;
     }
   }
+  
   @include media(">xs", "<=425px") {
     background-color: greenyellow;
     .responsive-header {
